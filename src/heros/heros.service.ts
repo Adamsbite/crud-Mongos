@@ -8,15 +8,18 @@ export class HerosService {
   constructor(
     @InjectModel(Hero.name) private heroModel: mongoose.Model<Hero>,
   ) {}
-  getHeros() {
-    return { message: 'All Heroes' };
+  async getHeros() {
+    const heros = await this.heroModel.find();
+    return heros;
   }
   getHero() {
     return { message: 'single hero' };
   }
-  createHero(heroDetails) {
+  async createHero(heroDetails) {
     console.log(heroDetails);
-    return { message: 'Create hero' };
+
+    const hero = await this.heroModel.create(heroDetails);
+    return hero;
   }
 
   editHero() {

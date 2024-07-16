@@ -16,9 +16,9 @@ export class HerosController {
   @Post('')
   createHero(@Body() hero) {
     return this.heroService.createHero(hero);
-  }  
+  }
   @Put('')
-  editHero() { 
+  editHero() {
     return this.heroService.editHero();
   }
   @Delete('')
