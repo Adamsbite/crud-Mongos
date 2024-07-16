@@ -27,10 +27,10 @@ export class HerosService {
   async editHero(id, hero) {
     const editedHero = await this.heroModel.findByIdAndUpdate(id, hero, {
       new: true,
-    });
+    }); 
     return editedHero;
   }
-  async deleteHero(id) {
+  async deleteHero(id) { 
     const hero = await this.heroModel.findByIdAndDelete(id);
     return hero;
   }
