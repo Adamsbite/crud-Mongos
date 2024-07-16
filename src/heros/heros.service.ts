@@ -12,8 +12,10 @@ export class HerosService {
     const heros = await this.heroModel.find();
     return heros;
   }
-  getHero() {
-    return { message: 'single hero' };
+
+  async getHero(id) {
+    const hero = await this.heroModel.findById(id);
+    return hero;
   }
   async createHero(heroDetails) {
     console.log(heroDetails);
@@ -22,10 +24,14 @@ export class HerosService {
     return hero;
   }
 
-  editHero() {
-    return { message: 'Edit hero' };
+  async editHero(id, hero) {
+    const editedHero = await this.heroModel.findByIdAndUpdate(id, hero, {
+      new: true,
+    });
+    return editedHero;
   }
-  deleteHero() {
-    return { message: 'delete hero' };
+  async deleteHero(id) {
+    const hero = await this.heroModel.findByIdAndDelete(id);
+    return hero;
   }
 }

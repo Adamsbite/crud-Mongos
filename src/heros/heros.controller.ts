@@ -1,4 +1,12 @@
-import { Body, Controller, Delete, Get, Post, Put } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Put,
+} from '@nestjs/common';
 // import { get } from 'http';
 import { HerosService } from './heros.service';
 
@@ -9,20 +17,20 @@ export class HerosController {
   getHeros() {
     return this.heroService.getHeros();
   }
-  @Get('')
-  getHero() {
-    return this.heroService.getHero();
+  @Get(':id')
+  getHero(@Param('id') id) {
+    return this.heroService.getHero(id);
   }
   @Post('')
   createHero(@Body() hero) {
     return this.heroService.createHero(hero);
   }
-  @Put('')
-  editHero() {
-    return this.heroService.editHero();
+  @Put(':id')
+  editHero(@Param('id') id, @Body() hero) {
+    return this.heroService.editHero(id, hero);
   }
-  @Delete('')
-  deleteHero() {
-    return this.heroService.deleteHero();
+  @Delete(':id')
+  deleteHero(@Param('id') id) {
+    return this.heroService.deleteHero(id);
   }
 }
