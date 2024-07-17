@@ -17,10 +17,10 @@ export class HerosService {
     const hero = await this.heroModel.findById(id);
     return hero;
   }
-  async createHero(heroDetails) {
-    console.log(heroDetails);
+  async createHero(heroDetails) { 
+    console.log(heroDetails); 
 
-    const hero = await this.heroModel.create(heroDetails);
+    const hero =  await this.heroModel.create(heroDetails);
     return hero;
   }
 
