@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import Hero from './schemas/hero.schemas';
 
 @Injectable()
-export class  HerosService {
+export class HerosService {
   constructor(
     @InjectModel(Hero.name) private heroModel: mongoose.Model<Hero>,
   ) {}
@@ -16,7 +16,7 @@ export class  HerosService {
   async getHero(id) {
     const hero = await this.heroModel.findById(id);
     return hero;
-  } 
+  }
   async createHero(heroDetails) {
     console.log(heroDetails);
 
