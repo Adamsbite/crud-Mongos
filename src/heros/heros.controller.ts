@@ -10,7 +10,7 @@ import {
 // import { get } from 'http';
 import { HerosService } from './heros.service';
 
-@Controller('heros' )
+@Controller('heros')
 export class HerosController {
   constructor(private readonly heroService: HerosService) {}
   @Get(' ')
@@ -25,7 +25,7 @@ export class HerosController {
   createHero(@Body() hero) {
     return this.heroService.createHero(hero);
   }
-  @Put(':id') 
+  @Put(':id')
   editHero(@Param('id') id, @Body() hero) {
     return this.heroService.editHero(id, hero);
   }
