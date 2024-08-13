@@ -12,3 +12,5 @@ import Hero, { HeroSchema } from './schemas/hero.schemas';
   providers: [HerosService],
 })
 export class HerosModule {}
+
+

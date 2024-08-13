@@ -34,3 +34,4 @@ export class HerosController {
     return this.heroService.deleteHero(id);
   }
 }
+
