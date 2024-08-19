@@ -21,6 +21,7 @@ export class HerosController {
   getHero(@Param('id') id) {
     return this.heroService.getHero(id);
   }
+
   @Post('')
   createHero(@Body() hero) {
     return this.heroService.createHero(hero);
@@ -29,6 +30,7 @@ export class HerosController {
   editHero(@Param('id') id, @Body() hero) {
     return this.heroService.editHero(id, hero);
   }
+
   @Delete(':id')
   deleteHero(@Param('id') id) {
     return this.heroService.deleteHero(id);
