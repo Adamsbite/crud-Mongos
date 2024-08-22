@@ -10,9 +10,9 @@ import { MongooseModule } from '@nestjs/mongoose';
       'mongodb+srv://btadamz:Adamsbite11@cluster1.wmt59rk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1',
     ), 
     HerosModule,
-  ],
+  ], 
   controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
- 
+   
